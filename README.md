@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://create.roblox.com/dashboard/creations/store/92555075031933/"><img src="https://raw.githubusercontent.com/maneetoo/Roblox-OSS-Badges/7c1fc7d1b321e76aeb6bd69d597a5af3e343c76a/Badges/Roblox-Styled/Creator/link-creator-store-middle.svg" alt="Creator Store"></a> 
-  <a href="https://maneetoo.github.io/Wisp/"><img src="https://raw.githubusercontent.com/maneetoo/Roblox-OSS-Badges/7c1fc7d1b321e76aeb6bd69d597a5af3e343c76a/Badges/Roblox-Styled/Original/link-docs.svg" alt="Docs"></a> 
+  <a href="https://maneetoo.github.io/wisp/"><img src="https://raw.githubusercontent.com/maneetoo/Roblox-OSS-Badges/7c1fc7d1b321e76aeb6bd69d597a5af3e343c76a/Badges/Roblox-Styled/Original/link-docs.svg" alt="Docs"></a> 
   <a href="https://github.com/maneetoo/wisp/releases"><img src="https://raw.githubusercontent.com/maneetoo/Roblox-OSS-Badges/7c1fc7d1b321e76aeb6bd69d597a5af3e343c76a/Badges/Roblox-Styled/Original/link-download.svg" alt="Download"></a>
   <a href="https://wally.run/package/maneetoo/wisp"><img src="https://raw.githubusercontent.com/maneetoo/Roblox-OSS-Badges/7c1fc7d1b321e76aeb6bd69d597a5af3e343c76a/Badges/Community/Package/link-wally.svg" alt="Wally"></a>
   <a href="https://pesde.dev/packages/maneetoo/wisp"><img src="https://raw.githubusercontent.com/maneetoo/Roblox-OSS-Badges/7c1fc7d1b321e76aeb6bd69d597a5af3e343c76a/Badges/Community/Package/link-pesde.svg" alt="Pesde"></a>
