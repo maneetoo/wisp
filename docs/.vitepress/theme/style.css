@@ -1,0 +1,409 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ *
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *   It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *   top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *   on top of it.
+ *
+ *   The soft color must be semi transparent alpha channel. This is crucial
+ *   because it allows adding multiple "soft" colors on top of each other
+ *   to create an accent, such as when having inline code block inside
+ *   custom containers.
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attached to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+
+  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-2: var(--vp-c-indigo-2);
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #8534fe 10%,
+    #41d1ff
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -75deg,
+    #be34fe 30%,
+    #41d1ff
+  );
+  --vp-home-hero-image-filter: blur(124px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(256px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(268px);
+  }
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+:root {
+  scroll-behavior: smooth;
+}
+
+
+.VPHero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: 120% auto;
+  background-position: center right;
+  opacity: 0;
+  transform: translateY(-2rem);
+  animation: hero-bg-fade-in 0.8s ease 0.3s forwards;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url('/assets/hero-bg-light.svg');
+}
+
+.dark .VPHero::before {
+  background-image: url('/assets/hero-bg-dark.svg');
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .VPHero::before {
+    filter: blur(3rem);
+    opacity: 0.3 !important;
+  }
+}
+
+@keyframes hero-bg-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPHero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.VPHero .name {
+  animation: hero-fade-up 0.8s ease 0.6s both;
+}
+
+.VPHero .text {
+  animation: hero-fade-up 0.8s ease 0.8s both;
+}
+
+.VPHero .tagline {
+  animation: hero-fade-up 0.8s ease 1s both;
+}
+
+.VPHero .actions {
+  animation: hero-fade-up 0.8s ease 1.2s both;
+}
+
+.VPHero .image {
+  animation: hero-fade-scale 0.8s ease 0.9s both;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scroll-indicator {
+  animation: fade-up 0.6s ease 1.5s both;
+}
+
+.VPFeatures {
+  animation: fade-up 0.6s ease 1.7s both;
+}
+
+.VPFeature {
+  opacity: 0;
+  animation: fade-up-scale 0.5s ease both;
+}
+
+.VPFeature:nth-child(1) { animation-delay: 1.8s; }
+.VPFeature:nth-child(2) { animation-delay: 1.95s; }
+.VPFeature:nth-child(3) { animation-delay: 2.1s; }
+.VPFeature:nth-child(4) { animation-delay: 2.25s; }
+.VPFeature:nth-child(5) { animation-delay: 2.4s; }
+.VPFeature:nth-child(6) { animation-delay: 2.55s; }
+
+@keyframes fade-up-scale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* NextSteps - убрана анимация с родителя */
+.next-steps-section .title {
+  opacity: 0;
+  animation: fade-up 0.5s ease 1.8s both;
+}
+
+.next-steps-section .description {
+  opacity: 0;
+  animation: fade-up 0.5s ease 1.95s both;
+}
+
+.next-steps-section .link-card {
+  opacity: 0;
+  animation: fade-up-scale 0.5s ease both;
+}
+
+.next-steps-section .link-card:nth-child(1) { animation-delay: 2.1s; }
+.next-steps-section .link-card:nth-child(2) { animation-delay: 2.25s; }
+.next-steps-section .link-card:nth-child(3) { animation-delay: 2.4s; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vp-doc h1 {
+  animation: doc-fade-in 0.6s ease 0.2s both;
+}
+
+.vp-doc h2 {
+  animation: doc-fade-left 0.5s ease both;
+}
+
+.vp-doc h2:nth-of-type(1) { animation-delay: 0.3s; }
+.vp-doc h2:nth-of-type(2) { animation-delay: 0.4s; }
+.vp-doc h2:nth-of-type(3) { animation-delay: 0.5s; }
+.vp-doc h2:nth-of-type(4) { animation-delay: 0.6s; }
+.vp-doc h2:nth-of-type(5) { animation-delay: 0.7s; }
+
+.vp-doc h3 {
+  animation: doc-fade-left 0.5s ease both;
+}
+
+.vp-doc h3:nth-of-type(1) { animation-delay: 0.4s; }
+.vp-doc h3:nth-of-type(2) { animation-delay: 0.5s; }
+.vp-doc h3:nth-of-type(3) { animation-delay: 0.6s; }
+
+.vp-doc p,
+.vp-doc ul,
+.vp-doc ol {
+  animation: doc-fade-in 0.5s ease 0.3s both;
+}
+
+.vp-doc .tip,
+.vp-doc .warning,
+.vp-doc .danger,
+.vp-doc .info {
+  animation: fade-up 0.5s ease 0.5s both;
+}
+
+.vp-doc table {
+  animation: fade-up 0.6s ease 0.6s both;
+}
+
+@keyframes doc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes doc-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Code blocks */
+.vp-doc div[class*="language-"] {
+  opacity: 0;
+  animation: code-block-appear 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes code-block-appear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vp-doc div[class*="language-"] > *,
+.vp-doc div[class*="language-"] pre,
+.vp-doc div[class*="language-"] code {
+  transform: none !important;
+  animation: none !important;
+}
+
+.vp-doc div[class*="language-"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: 150% 0;
+  animation: code-shimmer 0.9s ease both;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.dark .vp-doc div[class*="language-"]::before {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: 150% 0;
+}
+
+@keyframes code-shimmer {
+  0%   { background-position: 150% 0; }
+  100% { background-position: -50% 0; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .vp-doc div[class*="language-"],
+  .vp-doc div[class*="language-"]::before {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
