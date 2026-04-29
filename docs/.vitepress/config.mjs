@@ -7,8 +7,8 @@ export default defineConfig({
   description: "All-in-One, Fast & Buffer-Based Networking for Roblox",
   themeConfig: {
     logo: {
-      light: '/assets/Wisp-Logo.png',
-      dark: '/assets/Wisp-Logo.png',
+      light: '/git-assets/Wisp-Logo.png',
+      dark: '/git-assets/Wisp-Logo.png',
       alt: 'Wisp Logo'
     },
 
