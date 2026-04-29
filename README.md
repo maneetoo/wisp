@@ -14,13 +14,13 @@
 
 <br/>
 
-[Wisp](https://maneetoo.github.io/Wisp/) - Roblox Networking between client and server, based on [buffer](https://create.roblox.com/docs/reference/engine/libraries/buffer) written in [Luau](https://luau.org/) for [Roblox](https://www.roblox.com/). The main feature of Wisp is the almost possible minimum packet size, which is achieved through careful buffering, schemas, and table compression ([LZ4HC](https://lz4.org/), [Deflate](https://github.com/libyal/assorted/blob/main/documentation/Deflate%20(zlib)%20compressed%20data%20format.asciidoc?ysclid=mofdhd7ye6229227322), [Zstd](http://www.zstd.net/)). It also offers maximum ease of use and fast transmission between parties.
+[Wisp](https://maneetoo.github.io/wisp/) - Roblox Networking between client and server, based on [buffer](https://create.roblox.com/docs/reference/engine/libraries/buffer) written in [Luau](https://luau.org/) for [Roblox](https://www.roblox.com/). The main feature of Wisp is the almost possible minimum packet size, which is achieved through careful buffering, schemas, and table compression ([LZ4HC](https://lz4.org/), [Deflate](https://github.com/libyal/assorted/blob/main/documentation/Deflate%20(zlib)%20compressed%20data%20format.asciidoc?ysclid=mofdhd7ye6229227322), [Zstd](http://www.zstd.net/)). It also offers maximum ease of use and fast transmission between parties.
 
 > [!WARNING]
 > Wisp is in active development. Although the module passes all checks, some edge-cases may cause errors, data loss, and so on. For large projects, it is better wait for a stable version of Wisp or use similar alternatives. We would appreciate your help in finding vulnerabilities in the module by opening Issues and Pull Requests! Thank you so much!
 
 ## Documentation
-[Jump!](https://maneetoo.github.io/Wisp/)
+[Jump!](https://maneetoo.github.io/wisp/)
 
 ## Installation
 Wally:
