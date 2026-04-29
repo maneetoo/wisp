@@ -1,0 +1,15 @@
+name = "maneetoo/wisp"
+version = "0.1.0-patch"
+authors = ["maneetoo"]
+description = "All-in-One Networking for Roblox"
+repository = "https://github.com/maneetoo/wisp"
+includes = ["pesde.toml", "README.md", "LICENSE.md", "src"]
+license = "MIT"
+
+[target]
+environment = "luau"
+lib = "src/lib/init.luau"
+build_files = ["src"]
+
+[indices]
+default = "https://github.com/pesde-pkg/index"

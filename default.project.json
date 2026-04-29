@@ -1,0 +1,12 @@
+{
+  "name": "Wisp",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Wisp": {
+        "$path": "src"
+      }
+    }
+  }
+}
