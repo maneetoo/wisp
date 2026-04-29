@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/wisp/',
   title: "Wisp",
   description: "All-in-One, Fast & Buffer-Based Networking for Roblox",
   themeConfig: {
