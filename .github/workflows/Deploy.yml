@@ -44,11 +44,6 @@ jobs:
           yarn docs:build
           touch docs/.vitepress/dist/.nojekyll
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/.vitepress/dist
-
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
