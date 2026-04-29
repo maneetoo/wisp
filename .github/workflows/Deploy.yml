@@ -42,7 +42,6 @@ jobs:
       - name: Build
         run: |
           yarn docs:build
-          touch docs/.vitepress/dist/.nojekyll
 
       - name: Deploy
         id: deployment
