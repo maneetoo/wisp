@@ -7,8 +7,8 @@ hero:
   text: "All-in-One Networking for Roblox"
   tagline: Buffer-Based. Safety. Schemas. Fast.
   image:
-    light: /wisp/assets/Wisp-Logo.png
-    dark: /wisp/assets/Wisp-Logo.png
+    light: /Wisp-Logo.png
+    dark: /Wisp-Logo.png
     alt: Wisp Logo
 
   actions:
